@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>Закрытая игра</title>
+
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  </head>
+
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="inner cover">
+            <img src="img/belkanet_logo.png" class="" alt="Belka net"/>
+		</br>
+		</br>
+		</br>
+		<h1 class="cover-heading"><a id="code" href="#"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+function getParameter() {
+    url = window.location.href;
+    unescapeUrl = unescape(url);
+
+    var regex = new RegExp('[?]code=([^&#]*)'),
+        results = regex.exec(unescapeUrl);
+    if (!results) return null;
+    if (!results[1]) return '';
+   
+    return results[1].replace(/[^0-9]/g, '');
+}
+
+var a = document.getElementById("code");
+if (a){
+    var code = getParameter();
+    if (code){
+       a.text = 'Закрытая игра ' + code;
+       a.href = 'https://yura38i2.github.io/locked.html?code=' + code;
+    }else{
+       a.text = 'Ошибка';
+       a.href = '#';
+    }
+}
+</script>
+
+</body></html>
