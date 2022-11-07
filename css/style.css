@@ -64,6 +64,7 @@ body {
     font-weight: 400;
 }
 .game-card__footer {
+    display: none;
     padding-top: 5px;
     padding-right: 5px;
     overflow: hidden;
@@ -73,6 +74,14 @@ body {
     hyphens: auto;
     font-size: 13px;
     max-height: 53px;
+}
+/*
+ * Affix
+ */
+ @media (min-width: 500px) {
+    .game-card__footer {
+      display: block;
+    }
 }
 
 /*
