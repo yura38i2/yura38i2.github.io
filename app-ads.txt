@@ -299,3 +299,73 @@ pangleglobal.com, 82832, RESELLER
 bigo.sg, 196, RESELLER
 openx.com, 537045659, RESELLER, 6a698e2ec38604c6
 appnexus.com, 7597, RESELLER, f5ab79cb980f11d1
+netsvision.com, 9992301, RESELLER
+netsvision.com, 9992310, RESELLER
+netsvision.com, 9992311, RESELLER
+netsvision.com, 9992315, RESELLER
+netsvision.com, 9992397, RESELLER
+rtbsape.com, 1728038, RESELLER
+yeahmobi.com, 115446, RESELLER 
+zmaticoo.com,115446, RESELLER
+rubiconproject.com, 24362, RESELLER, 0bfd66d529a55807
+freewheel.tv, 1599106, RESELLER
+freewheel.tv, 1599109, RESELLER
+admanmedia.com, 990, RESELLER
+visiblemeasures.com, 1020, RESELLER
+pubmatic.com, 161136, RESELLER, 5d62403b186f2ace
+smaato.com, 1100051149, RESELLER, 07bcf65f187117b4
+smaato.com, 1100004890, RESELLER, 07bcf65f187117b4
+conversantmedia.com, 100455, RESELLER, 03113cd04947736d
+smartadserver.com, 4457, RESELLER, 060d053dcf45cbf3
+sharethrough.com, DQQogebZ, RESELLER, d53b998a7bd4ecd2
+pubnative.net, 1007475, RESELLER, d641df8625486a7b 
+pubnative.net, 1007303, RESELLER, d641df8625486a7b 
+pubnative.net, 1007311, RESELLER, d641df8625486a7b
+Contextweb.com, 562762, RESELLER, 89ff185a4c4e857c
+rubiconproject.com, 25482, RESELLER, 0bfd66d529a55807
+admixer.co.kr, 1654, RESELLER
+tpmn.io, 663, RESELLER
+tpmn.io, 664, RESELLER
+loopme.com, 11605, RESELLER, 6c8d5f95897a5a3b
+rubiconproject.com, 20744, RESELLER, 0bfd66d529a55807
+pubmatic.com, 158154, RESELLER, 5d62403b186f2ace
+triplelift.com, 12158, RESELLER, 6c33edb13117fd86
+xandr.com, 13799, RESELLER
+contextweb.com, 562499, RESELLER, 89ff185a4c4e857c
+sharethrough.com, 6qlnf8SY, RESELLER, d53b998a7bd4ecd2
+freewheel.tv, 1137745, RESELLER
+freewheel.tv, 1138513, RESELLER
+conversantmedia.com, 100246, RESELLER, 03113cd04947736d
+media.net, 8CUN37DCC, RESELLER
+improvedigital.com, 2110, RESELLER
+improvedigital.com, 1532, RESELLER
+onairglobal.com, 4357627, RESELLER
+thebrave.io, 1234585, RESELLER, c25b2154543746ac
+videoheroes.tv, 212503, RESELLER, 064bc410192443d8
+Se7en.es, 212503, RESELLER, 064bc410192443d8
+opera.com, pub7275292332480, RESELLER, 55a0c5fd61378de3
+pokkt.com, 7606, RESELLER, c45702d9311e25fd
+appads.in, 107606, RESELLER
+rubiconproject.com, 23644, RESELLER, 0bfd66d529a55807
+lijit.com, 411121, RESELLER, fafdf38b16bf6b2b #SOVRN
+admanmedia.com, 2050, RESELLER
+xandr.com, 13238, RESELLER, f5ab79cb980f11d1
+opera.com, pub5865193350528, RESELLER, 55a0c5fd61378de3
+sonobi.com,a85c5f6129, RESELLER, d1a215d9eb5aee9e
+smartadserver.com, 4140, RESELLER
+improvedigital.com, 2276, RESELLER
+inmobi.com, 7847fe1f9ac54b4abe609cde4011243b, RESELLER, 83e75a7ae333ca9d
+rubiconproject.com, 17608, RESELLER, 0bfd66d529a55807
+axonix.com, 59089, RESELLER, bc385f2b4a87b721
+improvedigital.com, 2276, RESELLER
+display.io, 173162, RESELLER
+mman.kr, 33000, RESELLER
+betweendigital.com, 44659, RESELLER 
+hyperad.tech, 172, RESELLER
+hyperad.tech, 182, RESELLER
+google.com, pub-2843405949989126, RESELLER, f08c47fec0942fa0
+inmobi.com, 38e36193f3c944d0b6254c71e511041b, RESELLER, 83e75a7ae333ca9d
+webeyemob.com, 70104, RESELLER
+meitu.com, 699, RESELLER
+eskimi.com, 2020000011, RESELLER
+video.unrulymedia.com, 498216989, RESELLER
