@@ -1,129 +1,132 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Белка — карточная игра для Android. Открыть 12 «глаз» или набрать 120 очков в раздаче. Четыре колоды, 12 рубашек, настройка правил.">
+    <meta name="theme-color" content="#10151a">
 
     <link rel="icon" href="img/favicon.ico">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Yura Games</title>
+    <title>Белка — карточная игра для Android · Yura Games</title>
   </head>
+
   <body>
+    <a class="skip" href="#shots">Перейти к скриншотам</a>
 
-    <div class="container">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand__suits" aria-hidden="true">♠<span>♥</span></span>
+        Yura&nbsp;Games
+      </a>
+      <a class="topbar__link" href="index.html">Все игры</a>
+    </header>
 
-        <!-- Back to top button -->
-        <img id="button" src="img/up.png">
+    <main class="page">
 
-        <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Игры</a>
-            </li>
+      <!-- ---------- Шапка игры ---------- -->
+      <section class="lead">
+        <img class="lead__cover" src="img/belka_logo.png" alt="Логотип игры Белка" width="160" height="160">
+
+        <div class="lead__body">
+          <p class="lead__genre">Карточная · 4 игрока · играется без интернета</p>
+          <h1 class="lead__title">Белка</h1>
+          <p class="lead__text">
+            Любимая игра жителей Караганды и других городов Казахстана. Цель — открыть
+            12 «глаз» в партии или набрать 120 очков в раздаче.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--play" href="https://play.google.com/store/apps/details?id=kolyhanov.y.belka" target="_blank" rel="noopener">
+              Google&nbsp;Play
+            </a>
+            <a class="btn btn--play" href="https://www.rustore.ru/catalog/app/kolyhanov.y.belka" target="_blank" rel="noopener">
+              RuStore
+            </a>
+            <a class="btn" href="https://github.com/yura38i2/yura38i2.github.io/releases/tag/Belka" target="_blank" rel="noopener">
+              APK · GitHub
+            </a>
+            <a class="btn" href="https://yadi.sk/d/du3FiIrGQl6FfQ" target="_blank" rel="noopener">
+              APK · Яндекс Диск
+            </a>
+            <a class="btn" href="https://apkpure.com/ru/belka-card-game/kolyhanov.y.belka" target="_blank" rel="noopener">
+              APK · APKPure
+            </a>
+          </div>
+
+          <p class="actions__note">
+            APK ставится вручную — разрешите установку из неизвестных источников.
+          </p>
+        </div>
+      </section>
+
+      <!-- ---------- Возможности ---------- -->
+      <section class="block">
+        <h2 class="block__title">Что внутри</h2>
+        <ul class="features">
+          <li>Четыре классические колоды, 12 рубашек и 12 фонов стола на выбор</li>
+          <li>Колоду можно сменить прямо посреди партии — кнопкой «back»</li>
+          <li>Правила настраиваются до начала игры и запоминаются</li>
+          <li>Спокойный интерфейс без лишних кнопок</li>
+          <li>Работает офлайн, соперники — на устройстве</li>
+        </ul>
+      </section>
+
+      <!-- ---------- История версий ---------- -->
+      <section class="block">
+        <h2 class="block__title">Что нового</h2>
+
+        <ol class="log">
+          <li class="log__item">
+            <div class="log__head">
+              <span class="log__ver">2.26</span>
+              <time class="log__date" datetime="2026-09-03">3 сентября 2026</time>
+            </div>
+            <ul class="log__list">
+              <li>Поддержка Android 16</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ---------- Скриншоты ---------- -->
+      <section class="block" id="shots">
+        <h2 class="block__title">Скриншоты</h2>
+        <p class="block__note">Нажмите на снимок, чтобы открыть его целиком.</p>
+
+        <ul class="shots">
+          <li><a href="#shot-1"><img src="img/belka_screen_1.jpg" alt="Раздача карт" loading="lazy"></a></li>
+          <li><a href="#shot-2"><img src="img/belka_screen_2.jpg" alt="Ход партии" loading="lazy"></a></li>
+          <li><a href="#shot-3"><img src="img/belka_screen_3.jpg" alt="Выбор колоды" loading="lazy"></a></li>
+          <li><a href="#shot-4"><img src="img/belka_screen_4.jpg" alt="Настройки правил" loading="lazy"></a></li>
+          <li><a href="#shot-5"><img src="img/belka_screen_5.jpg" alt="Подсчёт очков" loading="lazy"></a></li>
+          <li><a href="#shot-6"><img src="img/belka_screen_6.jpg" alt="Выбор фона стола" loading="lazy"></a></li>
         </ul>
 
-        <section class="game__wrapper">
-            <h1 class="section-header">Белка</h1>
+        <!-- Просмотр во весь экран на :target, без JS -->
+        <div class="viewer" id="shot-1"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/belka_screen_1.jpg" alt="Раздача карт"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-2"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/belka_screen_2.jpg" alt="Ход партии"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-3"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/belka_screen_3.jpg" alt="Выбор колоды"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-4"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/belka_screen_4.jpg" alt="Настройки правил"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-5"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/belka_screen_5.jpg" alt="Подсчёт очков"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-6"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/belka_screen_6.jpg" alt="Выбор фона стола"><a class="viewer__close" href="#shots">Закрыть</a></div>
+      </section>
 
-            <div class="row">
-                <div class="col-12">
-                    <img class="game-card__cover" src="img/belka_logo.png" alt="Логотип игры Белка">
-                </div>
-            </div>
+      <nav class="next">
+        <a href="index.html">← Вернуться ко всем играм</a>
+      </nav>
+    </main>
 
-            <div class="row">
-                <div class="col-12">
-                    <p class="text-left">
-                        Белка - любимая игра жителей Караганды и других городов Казахстана.
-                        Цель игры - выиграть партию открыв 12 «глаз» в партии или набрать 120 очков в раздаче.
-                    </p>
-
-                    <p>
-                      <ul class="text-left">
-			                  <li>Версия 2.26</li>
-			                  <li>Android 16</li>
-                       </ul>
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <a href="https://play.google.com/store/apps/details?id=kolyhanov.y.belka" target="_blank">
-                        <img class="google-play-badge" src="img/google-play-badge.png" alt="google play">
-                    </a>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center">
-                  <div class="col-xs-auto">
-                    <table>
-                        <tr>
-                            <td>
-                                Скачать apk:
-                            </td>
-                            <td class="text-left pl-2">
-                                <a href="https://yadi.sk/d/du3FiIrGQl6FfQ" class="download-link" target="_blank">
-                                    Последняя версия
-                                </a>
-                            </td>
-                        </tr>
-                    </table >
-                  </div>
-                </div>
-              </div>
-
-              <br/>
-              <br/>
-
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/belka_screen_1.jpg" alt="Белка скрин 1">
-                </div>
-    
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/belka_screen_2.jpg" alt="Белка скрин 2">
-                </div>
-    
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/belka_screen_3.jpg" alt="Белка скрин 3">
-                </div>
-    
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/belka_screen_4.jpg" alt="Белка скрин 4">
-                </div>
-
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/belka_screen_5.jpg" alt="Белка скрин 5">
-                </div>
-
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/belka_screen_6.jpg" alt="Белка скрин 6">
-                </div>
-             
-              </div>
-
-        </section>
-
-   
-    </div>
-
-    <footer class="footer-game">
-        <ul class="footer__menu">
-            <li>
-                Yura games 2016-2026
-            </li>
-        </ul>
+    <footer class="footer">
+      <p class="footer__line">Yura Games · 2016–2026</p>
+      <p class="footer__line"><a href="mailto:yuramobileapp@mail.ru">yuramobileapp@mail.ru</a></p>
+      <p class="footer__line"><a href="#top">Наверх</a></p>
     </footer>
-
-    <!-- Optional JavaScript -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
