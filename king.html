@@ -1,128 +1,138 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Кинг, он же дамский преферанс — карточная игра для Android. Набрать по сумме всех игр больше всего положительных очков.">
+    <meta name="theme-color" content="#10151a">
 
     <link rel="icon" href="img/favicon.ico">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Yura Games</title>
+    <title>Кинг — карточная игра для Android · Yura Games</title>
   </head>
+
   <body>
+    <a class="skip" href="#shots">Перейти к скриншотам</a>
 
-    <div class="container">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand__suits" aria-hidden="true">♠<span>♥</span></span>
+        Yura&nbsp;Games
+      </a>
+      <a class="topbar__link" href="index.html">Все игры</a>
+    </header>
 
-        <!-- Back to top button -->
-        <img id="button" src="img/up.png">
+    <main class="page">
 
-        <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Игры</a>
-            </li>
+      <section class="lead">
+        <img class="lead__cover" src="img/king_logo.png" alt="Логотип игры Кинг" width="160" height="160">
+
+        <div class="lead__body">
+          <p class="lead__genre">Карточная · 4 игрока · играется без интернета</p>
+          <h1 class="lead__title">Кинг</h1>
+          <p class="lead__text">
+            Он же дамский преферанс. Игра пришла к нам из Англии, где так и называется — King.
+            Партия состоит из разных игр подряд: в одних взятки нужно отдавать, в других брать.
+            Побеждает тот, у кого по сумме всех игр больше всего положительных очков.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--play" href="https://play.google.com/store/apps/details?id=kolyhanov.y.king" target="_blank" rel="noopener">
+              Google&nbsp;Play
+            </a>
+            <a class="btn btn--play" href="https://www.rustore.ru/catalog/app/kolyhanov.y.king" target="_blank" rel="noopener">
+              RuStore
+            </a>
+            <a class="btn" href="https://github.com/yura38i2/yura38i2.github.io/releases/tag/King" target="_blank" rel="noopener">
+              APK · GitHub
+            </a>
+            <a class="btn" href="https://yadi.sk/d/WJOyi7agkpOG2g" target="_blank" rel="noopener">
+              APK · Яндекс Диск
+            </a>
+            <a class="btn" href="https://apkpure.com/ru/king-or-ladies-preference/kolyhanov.y.king" target="_blank" rel="noopener">
+              APK · APKPure
+            </a>
+          </div>
+
+          <p class="actions__note">
+            APK ставится вручную — разрешите установку из неизвестных источников.
+          </p>
+        </div>
+        
+      </section>
+
+      <section class="block">
+        <h2 class="block__title">Что внутри</h2>
+        <ul class="features">
+          <li>Настройки под различные версии правил</li>
+          <li>Спокойный интерфейс без лишних кнопок</li>
+          <li>Работает офлайн</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h2 class="block__title">Что нового</h2>
+
+        <ol class="log">
+          
+          <li class="log__item">
+            <div class="log__head">
+              <span class="log__ver">4.9</span>
+              <span class="log__date">3 сентября 2026</span>
+            </div>
+            <ul class="log__list">
+              <li>Поддержка Android 16</li>
+            </ul>
+          </li>
+          
+          <li class="log__item">
+            <div class="log__head">
+              <span class="log__ver">4.8</span>
+              <span class="log__date">15 мая 2025</span>
+            </div>
+            <ul class="log__list">
+              <li>Поддержка Android 15</li>
+            </ul>
+          </li>
+
+          <!-- Следующие версии добавляйте сюда, копируя блок log__item выше -->
+        </ol>
+      </section>
+
+      <section class="block" id="shots">
+        <h2 class="block__title">Скриншоты</h2>
+        <p class="block__note">Нажмите на снимок, чтобы открыть его целиком.</p>
+
+        <ul class="shots">
+          <li><a href="#shot-1"><img src="img/king_screen_1.jpg" alt="Кинг, снимок 1" loading="lazy"></a></li>
+          <li><a href="#shot-2"><img src="img/king_screen_2.jpg" alt="Кинг, снимок 2" loading="lazy"></a></li>
+          <li><a href="#shot-3"><img src="img/king_screen_3.jpg" alt="Кинг, снимок 3" loading="lazy"></a></li>
+          <li><a href="#shot-4"><img src="img/king_screen_4.jpg" alt="Кинг, снимок 4" loading="lazy"></a></li>
+          <li><a href="#shot-5"><img src="img/king_screen_5.jpg" alt="Кинг, снимок 5" loading="lazy"></a></li>
         </ul>
 
-        <section class="game__wrapper">
-            <h1 class="section-header">Кинг</h1>
+        <div class="viewer" id="shot-1"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/king_screen_1.jpg" alt="Кинг, снимок 1"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-2"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/king_screen_2.jpg" alt="Кинг, снимок 2"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-3"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/king_screen_3.jpg" alt="Кинг, снимок 3"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-4"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/king_screen_4.jpg" alt="Кинг, снимок 4"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-5"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/king_screen_5.jpg" alt="Кинг, снимок 5"><a class="viewer__close" href="#shots">Закрыть</a></div>
+      </section>
 
-            <div class="row">
-                <div class="col-12">
-                    <img class="game-card__cover" src="img/king_logo.png" alt="Логотип игры Кинг">
-                </div>
-            </div>
+      <nav class="next">
+        <a href="index.html">← Вернуться ко всем играм</a>
+      </nav>
+    </main>
 
-            <div class="row">
-                <div class="col-12">
-                    <p class="text-left">
-                        Карточная игра Кинг или Дамский преферанс.
-                    </p>
-                    <p class="text-left">
-                        Кинг - игра, пришедшая к нам из Англии, где она так и называется (King)
-                        Цель игры: набрать по сумме всех игр больше всего положительных очков.
-                    </p>
-                   <p>
-                      <ul class="text-left">
-                        <li>Версия 4.9</li>
-                        <li>Android 16</li>
-                        <li>Улучшена перетасовка карт</li>
-                       </ul>
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <a href="https://play.google.com/store/apps/details?id=kolyhanov.y.king" target="_blank">
-                        <img class="google-play-badge" src="img/google-play-badge.png" alt="google play">
-                    </a>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center">
-                  <div class="col-xs-auto">
-                    <table>
-                        <tr>
-                            <td>
-                                Скачать apk:
-                            </td>
-                            <td class="text-left pl-2">
-                                <a href="https://yadi.sk/d/WJOyi7agkpOG2g" class="download-link" target="_blank">
-                                    Последняя версия
-                                </a>
-                            </td>
-                        </tr>
-                    </table >
-                  </div>
-                </div>
-              </div>
-
-              <br/>
-              <br/>
-
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/king_screen_1.jpg" alt="Кинг скрин 1">
-                </div>
-    
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/king_screen_2.jpg" alt="Кинг скрин 2">
-                </div>
-    
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/king_screen_3.jpg" alt="Кинг скрин 3">
-                </div>
-    
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/king_screen_4.jpg" alt="Кинг скрин 4">
-                </div>
-
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/king_screen_5.jpg" alt="Кинг скрин 5">
-                </div>
-             
-              </div>
-
-        </section>
-
-   
-    </div>
-
-    <footer class="footer-game">
-        <ul class="footer__menu">
-            <li>
-                Yura games 2016-2026
-            </li>
-        </ul>
+    <footer class="footer">
+      <p class="footer__line">Yura Games · 2016–2026</p>
+      <p class="footer__line"><a href="mailto:yuramobileapp@mail.ru">yuramobileapp@mail.ru</a></p>
+      <p class="footer__line"><a href="#top">Наверх</a></p>
     </footer>
-
-    <!-- Optional JavaScript -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
