@@ -1,112 +1,123 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eggs Attack — аркада для Android. Цель игры — разбить как можно больше яиц.">
+    <meta name="theme-color" content="#10151a">
 
     <link rel="icon" href="img/favicon.ico">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Yura Games</title>
+    <title>Eggs Attack — игра для Android · Yura Games</title>
   </head>
+
   <body>
+    <a class="skip" href="#shots">Перейти к скриншотам</a>
 
-    <div class="container">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand__suits" aria-hidden="true">♠<span>♥</span></span>
+        Yura&nbsp;Games
+      </a>
+      <a class="topbar__link" href="index.html">Все игры</a>
+    </header>
 
-        <!-- Back to top button -->
-        <img id="button" src="img/up.png">
+    <main class="page">
 
-        <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Игры</a>
-            </li>
+      <section class="lead">
+        <img class="lead__cover" src="img/eggs_logo.png" alt="Логотип игры Eggs Attack" width="160" height="160">
+
+        <div class="lead__body">
+          <p class="lead__genre">Аркада · один игрок · играется без интернета</p>
+          <h1 class="lead__title">Eggs Attack</h1>
+          <p class="lead__text">
+            Простая аркада: цель игры — разбить как можно
+            больше яиц. Подходит, чтобы отвлечься от дел.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--play" href="https://play.google.com/store/apps/details?id=kolyhanov.y.eggs" target="_blank" rel="noopener">
+              Установить из Google&nbsp;Play
+            </a>
+            <a class="btn btn--play" href="https://www.rustore.ru/catalog/app/kolyhanov.y.eggs" target="_blank" rel="noopener">
+              RuStore
+            </a>
+            <a class="btn" href="https://github.com/yura38i2/yura38i2.github.io/releases/tag/eggs" target="_blank" rel="noopener">
+              APK · GitHub
+            </a>
+            <a class="btn" href="https://disk.yandex.ru/d/qViDcVXFSRrXJQ" target="_blank" rel="noopener">
+              APK · Яндекс Диск
+            </a>
+            <a class="btn" href="https://apkpure.com/ru/eggs-attack/kolyhanov.y.eggs" target="_blank" rel="noopener">
+              APK · APKPure
+            </a>
+          </div>
+
+          <p class="actions__note">
+            APK ставится вручную — разрешите установку из неизвестных источников.
+          </p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="block__title">Что внутри</h2>
+        <ul class="features">
+          <li>Простая аркада — разбивайте яйца и набирайте очки</li>
+          <li>Короткие партии, удобно для короткой паузы</li>
+          <li>Понятное управление без обучения</li>
+          <li>Работает офлайн</li>
+        </ul>
+      </section>
+
+      <!--
+        Блок «Что нового» — раскомментируйте и заполните, когда появится история версий.
+
+      <section class="block">
+        <h2 class="block__title">Что нового</h2>
+        <ol class="log">
+          <li class="log__item">
+            <div class="log__head">
+              <span class="log__ver">1.0</span>
+              <time class="log__date" datetime="2025-01-01">1 января 2025</time>
+            </div>
+            <ul class="log__list">
+              <li>Первая запись об изменениях</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+      -->
+
+      <section class="block" id="shots">
+        <h2 class="block__title">Скриншоты</h2>
+        <p class="block__note">Нажмите на снимок, чтобы открыть его целиком.</p>
+
+        <ul class="shots">
+          <li><a href="#shot-1"><img src="img/eggs_screen_1.jpg" alt="Eggs Attack, снимок 1" loading="lazy"></a></li>
+          <li><a href="#shot-2"><img src="img/eggs_screen_2.jpg" alt="Eggs Attack, снимок 2" loading="lazy"></a></li>
+          <li><a href="#shot-3"><img src="img/eggs_screen_3.jpg" alt="Eggs Attack, снимок 3" loading="lazy"></a></li>
         </ul>
 
-        <section class="game__wrapper">
-            <h1 class="section-header">Eggs Attack</h1>
+        <div class="viewer" id="shot-1"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/eggs_screen_1.jpg" alt="Eggs Attack, снимок 1"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-2"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/eggs_screen_2.jpg" alt="Eggs Attack, снимок 2"><a class="viewer__close" href="#shots">Закрыть</a></div>
+        <div class="viewer" id="shot-3"><a class="viewer__bg" href="#shots" aria-label="Закрыть"></a><img src="img/eggs_screen_3.jpg" alt="Eggs Attack, снимок 3"><a class="viewer__close" href="#shots">Закрыть</a></div>
+      </section>
 
-            <div class="row">
-                <div class="col-12">
-                    <img class="game-card__cover" src="img/eggs_logo.png" alt="Логотип игры Eggs Attack">
-                </div>
-            </div>
+      <nav class="next">
+        <a href="index.html">← Вернуться ко всем играм</a>
+      </nav>
+    </main>
 
-            <div class="row">
-                <div class="col-12">
-                    <p class="text-left">
-                        Eggs Attack
-                    </p>
-                    <p class="text-left">
-                        Цель игры - разбить как можно больше яиц.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <a href="https://play.google.com/store/apps/details?id=kolyhanov.y.eggs" target="_blank">
-                        <img class="google-play-badge" src="img/google-play-badge.png" alt="google play">
-                    </a>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row justify-content-md-center">
-                  <div class="col-xs-auto">
-                    <table>
-                        <tr>
-                            <td>
-                                Скачать apk:
-                            </td>
-                            <td class="text-left pl-2">
-                                <a href="https://disk.yandex.ru/d/qViDcVXFSRrXJQ" class="download-link" target="_blank">
-                                    Последняя версия
-                                </a>
-                            </td>
-                        </tr>
-                    </table >
-                  </div>
-                </div>
-              </div>
-
-              <br/>
-              <br/>
-
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/eggs_screen_1.jpg" alt="Eggs скрин 1">
-                </div>
-    
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/eggs_screen_2.jpg" alt="Eggs скрин 2">
-                </div>
-    
-                <div class="col-xs-12 col-md-6">
-                    <img class="img-fluid" style="margin-top: 25px;" src="img/eggs_screen_3.jpg" alt="Eggs скрин 3">
-                </div>
-             
-              </div>
-
-        </section>
-
-   
-    </div>
-
-    <footer class="footer-game">
-        <ul class="footer__menu">
-            <li>
-                Yura games 2016-2026
-            </li>
-        </ul>
+    <footer class="footer">
+      <p class="footer__line">Yura Games · 2016–2026</p>
+      <p class="footer__line"><a href="mailto:yuramobileapp@mail.ru">yuramobileapp@mail.ru</a></p>
+      <p class="footer__line"><a href="#top">Наверх</a></p>
     </footer>
-
-    <!-- Optional JavaScript -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
