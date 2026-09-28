@@ -1,200 +1,180 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Yura Games — карточные игры для Android: Белка, Кинг, Черви, Пасьянсы. Бесплатно, без интернета, с 2016 года.">
+    <meta name="theme-color" content="#10151a">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" href="img/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Yura Games</title>
+    <title>Yura Games — карточные игры для Android</title>
   </head>
+
   <body>
+    <a class="skip" href="#games">Перейти к списку игр</a>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="section-header">Yura Games</h1>
-            </div>
-          </div>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand__suits" aria-hidden="true">♠<span>♥</span></span>
+        Yura&nbsp;Games
+      </a>
+      <a class="topbar__link" href="https://play.google.com/store/apps/developer?id=Yura+Card+Games" target="_blank" rel="noopener">Все игры в Google&nbsp;Play</a>
+    </header>
 
-        <div class="row">
-            <div class="col-xs-12 col-md-6 col-lg-4">
-                <a href="belka.html">
-                    <div class="game-card">
-                        <table>
-                            <tr>
-                                <td style="width: 144px;">
-                                    <img class="game-card__cover" src="img/belka_logo.png" alt="Логотип игры Белка">
-                                </td>
-                                <td style="height: 100%; vertical-align: top;">
-                                    <h2 class="game-card__header">Белка</h2">
-                                    <div class="game-card__genre">Карточная игра</div>
-                                    <div class="game-card__footer">
-                                        <p>
-                                            Цель игры: выиграть партию открыв 12 «глаз» в партии или набрать 120 очков в раздаче.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </a>
-            </div>
-              
-            <div class="col-xs-12 col-md-6 col-lg-4">
-                <a href="belkaonline.html">
-                    <div class="game-card">
-                        <table>
-                            <tr>
-                                <td style="width: 144px;">
-                                    <img class="game-card__cover" src="img/belka_online_logo.png" alt="Логотип игры Белка онлайн">
-                                </td>
-                                <td style="height: 100%; vertical-align: top;">
-                                    <h2 class="game-card__header">Белка онлайн</h2">
-                                    <div class="game-card__genre">Карточная игра</div>
-                                    <div class="game-card__footer">
-                                        <p>
-                                            Цель игры: выиграть партию открыв 12 «глаз» в партии или набрать 120 очков в раздаче.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </a>
-            </div>
+    <main>
+      <section class="hero">
+        <!-- Веер карт: чистый CSS, без картинок -->
+        <div class="fan" aria-hidden="true">
+          <div class="fan__card fan__card--1"><b>A</b><i>♠</i></div>
+          <div class="fan__card fan__card--2 is-red"><b>K</b><i>♥</i></div>
+          <div class="fan__card fan__card--3"><b>10</b><i>♣</i></div>
+          <div class="fan__card fan__card--4 is-red"><b>J</b><i>♦</i></div>
+          <div class="fan__card fan__card--5"><b>Q</b><i>♠</i></div>
+        </div>
 
-            <div class="col-xs-12 col-md-6 col-lg-4">
-                <a href="king.html">
-                    <div class="game-card">
-                        <table>
-                            <tr>
-                                <td style="width: 144px;">
-                                    <img class="game-card__cover" src="img/king_logo.png" alt="Логотип игры Кинг">
-                                </td>
-                                <td style="height: 100%; vertical-align: top;">
-                                    <h2 class="game-card__header">Кинг</h2">
-                                    <div class="game-card__genre">Карточная игра</div>
-                                    <div class="game-card__footer">
-                                        <p>
-                                            Цель игры: набрать по сумме всех игр больше всего положительных очков.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </a>
-            </div>
+        <h1 class="hero__title">Игры, в которые<br>играют за столом</h1>
+        <p class="hero__text">
+          Белка, кинг, черви и пасьянсы для Android. Всё бесплатно.
+        </p>
 
-            <div class="col-xs-12 col-md-6 col-lg-4">
-                <a href="hearts.html">
-                    <div class="game-card">
-                        <table>
-                            <tr>
-                                <td style="width: 144px;">
-                                    <img class="game-card__cover" src="img/hearts_logo.png" alt="Логотип игры Червы">
-                                </td>
-                                <td style="height: 100%; vertical-align: top;">
-                                    <h2 class="game-card__header">Червы</h2">
-                                    <div class="game-card__genre">Карточная игра</div>
-                                    <div class="game-card__footer">
-                                        <p>
-                                            Цель игры: набрать наименьшего количества очков.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </a>
-            </div>
-              
-            <div class="col-xs-12 col-md-6 col-lg-4">
-                <a href="belkanet.html">
-                    <div class="game-card">
-                        <table>
-                            <tr>
-                                <td style="width: 144px;">
-                                    <img class="game-card__cover" src="img/belkanet_logo.png" alt="Логотип игры Belka 2 онлайн">
-                                </td>
-                                <td style="height: 100%; vertical-align: top;">
-                                    <h2 class="game-card__header">Белка 2 онлайн</h2">
-                                    <div class="game-card__genre">Карточная игра</div>
-                                    <div class="game-card__footer">
-                                        <p>
-                                            Цель игры: выиграть партию открыв 12 «глаз» в партии или набрать 120 очков в раздаче.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </a>
-            </div>
-          
-           <div class="col-xs-12 col-md-6 col-lg-4">
-                <a href="eggs.html">
-                    <div class="game-card">
-                        <table>
-                            <tr>
-                                <td style="width: 144px;">
-                                    <img class="game-card__cover" src="img/eggs_logo.png" alt="Логотип игры Eggs Attack">
-                                </td>
-                                <td style="height: 100%; vertical-align: top;">
-                                    <h2 class="game-card__header">Eggs Attack</h2">
-                                    <div class="game-card__genre">Аркада</div>
-                                    <div class="game-card__footer">
-                                        <p>
-                                            Цель игры: разбить как можно больше яиц.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </a>
-            </div>
-              
-            <div class="col-xs-12 col-md-6 col-lg-4">
-                <a href="solitaire.html">
-                    <div class="game-card">
-                        <table>
-                            <tr>
-                                <td style="width: 144px;">
-                                    <img class="game-card__cover" src="img/solitaire_logo.png" alt="Логотип игры Пасьянсы">
-                                </td>
-                                <td style="height: 100%; vertical-align: top;">
-                                    <h2 class="game-card__header">Solitaire</h2">
-                                    <div class="game-card__genre">Карточная игра</div>
-                                    <div class="game-card__footer">
-                                        <p>
-                                            Сборник пасьянсов.
-                                        </p>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </a>
-            </div>
+        <dl class="stats">
+          <div><dt>Скачиваний</dt><dd>2&nbsp;млн</dd></div>
+          <div><dt>Игр в каталоге</dt><dd>7</dd></div>
+          <div><dt>Делаем с</dt><dd>2016</dd></div>
+        </dl>
+      </section>
 
-          </div>
-    </div>
+      <section class="catalog" id="games">
+        <!-- Фильтр на CSS: радиокнопки управляют видимостью карточек -->
+        <input class="filter__input" type="radio" name="filter" id="f-all" checked>
+        <input class="filter__input" type="radio" name="filter" id="f-card">
+        <input class="filter__input" type="radio" name="filter" id="f-online">
+        <input class="filter__input" type="radio" name="filter" id="f-other">
+
+        <div class="filter" role="group" aria-label="Фильтр игр">
+          <label for="f-all">Все</label>
+          <label for="f-card">Карты с ботом</label>
+          <label for="f-online">Онлайн игры</label>
+          <label for="f-other">Остальное</label>
+        </div>
+
+        <ul class="games">
+
+          <li class="game" data-kind="card">
+            <span class="game__index" aria-hidden="true">♠</span>
+            <img class="game__cover" src="img/belka_logo.png" alt="" width="128" height="128" loading="lazy">
+            <div class="game__body">
+              <h2 class="game__title"><a href="belka.html">Белка</a></h2>
+              <p class="game__genre">Карточная · 4 игрока · 1&nbsp;млн скачиваний</p>
+              <p class="game__text">
+                Любимая игра Караганды и всего Казахстана. Цель — открыть 12 «глаз»
+                или набрать 120 очков в раздаче. Четыре колоды, 12 рубашек и настройка правил
+                перед партией.
+              </p>
+              <a class="game__play" href="https://play.google.com/store/apps/details?id=kolyhanov.y.belka" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </li>
+
+          <li class="game" data-kind="online">
+            <span class="game__index" aria-hidden="true">♥</span>
+            <img class="game__cover" src="img/belka_online_logo.png" alt="" width="128" height="128" loading="lazy">
+            <div class="game__body">
+              <h2 class="game__title"><a href="belka-online.html">Белка онлайн</a></h2>
+              <p class="game__genre">Карточная · онлайн · 500&nbsp;тыс. скачиваний</p>
+              <p class="game__text">
+              	Новая версия онлайн-белки: переписанный движок, быстрый подбор соперников
+                и обновлённый стол.
+              </p>
+              <a class="game__play" href="https://play.google.com/store/apps/details?id=kolyhanov.net.belka" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </li>
+
+          <li class="game" data-kind="online">
+            <span class="game__index" aria-hidden="true">♦</span>
+            <img class="game__cover" src="img/belka_net_logo.png" alt="" width="128" height="128" loading="lazy">
+            <div class="game__body">
+              <h2 class="game__title"><a href="belka-net.html">Белка 2 онлайн</a></h2>
+              <p class="game__genre">Карточная · онлайн · 10&nbsp;тыс. скачиваний</p>
+              <p class="game__text">
+                Та же белка, но соперники живые. Играйте вчетвером из разных городов
+                или зовите друзей в свою комнату.
+              </p>
+              <a class="game__play" href="https://play.google.com/store/apps/details?id=kolyhanov.y.belkanet" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </li>
+
+          <li class="game" data-kind="card">
+            <span class="game__index" aria-hidden="true">♣</span>
+            <img class="game__cover" src="img/king_logo.png" alt="" width="128" height="128" loading="lazy">
+            <div class="game__body">
+              <h2 class="game__title"><a href="king.html">Кинг</a></h2>
+              <p class="game__genre">Карточная · 4 игрока · 50&nbsp;тыс. скачиваний</p>
+              <p class="game__text">
+                Он же «дамы». Партия из обязательных и вольных игр, где важно не только брать
+                взятки, но и вовремя их отдавать. Побеждает лучшая сумма очков.
+              </p>
+              <a class="game__play" href="https://play.google.com/store/apps/details?id=kolyhanov.y.king" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </li>
+
+          <li class="game" data-kind="card">
+            <span class="game__index is-red" aria-hidden="true">♥</span>
+            <img class="game__cover" src="img/hearts_logo.png" alt="" width="128" height="128" loading="lazy">
+            <div class="game__body">
+              <h2 class="game__title"><a href="hearts.html">Черви</a></h2>
+              <p class="game__genre">Карточная · 4 игрока · 10&nbsp;тыс. скачиваний</p>
+              <p class="game__text">
+                Игра наоборот: выигрывает тот, кто набрал меньше всех. Каждая червовая карта —
+                очко, дама пик — сразу тринадцать.
+              </p>
+              <a class="game__play" href="https://play.google.com/store/apps/details?id=y.kolyhanov.hearts" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </li>
+
+          <li class="game" data-kind="card">
+            <span class="game__index" aria-hidden="true">♠</span>
+            <img class="game__cover" src="img/solitaire_logo.png" alt="" width="128" height="128" loading="lazy">
+            <div class="game__body">
+              <h2 class="game__title"><a href="solitaire.html">Пасьянсы</a></h2>
+              <p class="game__genre">Карточная · один игрок</p>
+              <p class="game__text">
+                Три классических пасьянса в одном приложении: Косынка, Паук и Скорпион.
+                Для тех случаев, когда партнёров по столу нет.
+              </p>
+              <a class="game__play" href="https://play.google.com/store/apps/details?id=y.kolyhanov.solitaire" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </li>
+
+          <li class="game" data-kind="other">
+            <span class="game__index" aria-hidden="true">◆</span>
+            <img class="game__cover" src="img/eggs_logo.png" alt="" width="128" height="128" loading="lazy">
+            <div class="game__body">
+              <h2 class="game__title"><a href="eggs.html">Eggs Attack</a></h2>
+              <p class="game__genre">Аркада · один игрок</p>
+              <p class="game__text">
+                Разбивайте яица и набирайте очки.
+              </p>
+              <a class="game__play" href="https://play.google.com/store/apps/details?id=kolyhanov.y.eggs" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <p class="empty">В этой категории пока пусто — посмотрите остальные игры.</p>
+      </section>
+    </main>
 
     <footer class="footer">
-        <ul class="footer__menu">
-            <li>
-                Yura games 2016-2026
-            </li>
-        </ul>
+      <p class="footer__line">Yura Games · 2016–2026</p>
+      <p class="footer__line"><a href="mailto:yuramobileapp@mail.ru">yuramobileapp@mail.ru</a></p>
+      <p class="footer__line"><a href="#top">Наверх</a></p>
     </footer>
-
-
-    <!-- Optional JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
