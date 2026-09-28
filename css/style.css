@@ -1,165 +1,789 @@
-/*
- * Globals
- */
+/* =========================================================
+   Yura Games — тёмная тема в духе Material Design 3
+   Только HTML + CSS. Без фреймворков и без JavaScript.
+   ========================================================= */
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-  text-decoration: none; /* Убирает подчеркивание для ссылок */
+/* ---------- 1. Токены темы ---------- */
+
+:root {
+  /* Поверхности: нейтральный графит с холодным подтоном,
+     пять ступеней возвышения вместо одного "surface/surface-up" */
+  --bg:              #10151a;
+  --surface:         #161d24;
+  --surface-c:       #1b232b;
+  --surface-c-high:  #222c35;
+  --surface-c-highest:#2b3641;
+  --outline:         #384552;
+  --outline-dim:     #263038;
+
+  /* Цветовая роль "primary" — латунь, уже узнаваемый цвет бренда */
+  --primary:         #dcab63;
+  --primary-dim:     #a9814c;
+  --on-primary:      #241704;
+
+  /* "secondary" — приглушённый серо-голубой, для второстепенных акцентов */
+  --secondary:       #7fa0b3;
+  --on-secondary:    #0b1a21;
+
+  /* "tertiary" — тёплый красный масти, только для червей/бубен и предупреждений */
+  --tertiary:        #d9808a;
+
+  --text:            #e9f0f4;
+  --text-dim:        #9dadb8;
+  --text-faint:      #6d7d88;
+
+  /* Возвышение: у каждого уровня своя тень + лёгкая примесь primary,
+     как того требует surface-tint в Material 3 */
+  --elev-1: 0 1px 2px rgba(0,0,0,.45), 0 1px 3px 1px rgba(0,0,0,.28);
+  --elev-2: 0 1px 2px rgba(0,0,0,.5), 0 3px 8px 1px rgba(0,0,0,.3);
+  --elev-3: 0 4px 10px 2px rgba(0,0,0,.32), 0 1px 3px rgba(0,0,0,.5);
+
+  /* Радиусы скруглений по шкале форм M3: xs/sm — мелкие элементы,
+     md/lg — карточки и панели, full — таблетки и чипы */
+  --r-xs:   8px;
+  --r-sm:   12px;
+  --r-md:   16px;
+  --r-lg:   24px;
+  --r-full: 999px;
+
+  --font-display: "Unbounded", "Trebuchet MS", system-ui, sans-serif;
+  --font-text:    "Golos Text", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+
+  color-scheme: dark;
 }
 
-html,
+/* ---------- 2. Сброс и база ---------- */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  height: 100%;
-  background-color: #17212b;
-  color: #fff;
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-text);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: radial-gradient(1100px 560px at 50% -220px, rgba(220, 171, 99, .10), transparent 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ---------- 3. Типографика ---------- */
+
+h1, h2, h3 { font-family: var(--font-display); }
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { color: #eec48b; }
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 50;
+  padding: 10px 16px;
+  background: var(--surface-c-high);
+  border-radius: var(--r-xs);
+  box-shadow: var(--elev-2);
+}
+
+/* ---------- 4. Общий контейнер ---------- */
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: clamp(10px, 3vw, 28px) clamp(16px, 5vw, 40px) 70px;
+}
+
+/* ---------- 5. Шапка ---------- */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px clamp(16px, 5vw, 40px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -.01em;
+  color: var(--text);
+}
+.brand:hover { color: var(--text); }
+
+.brand__suits {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 30px;
+  text-align: center;
+  color: var(--on-primary);
+  background: var(--primary);
+  border-radius: var(--r-xs);
+}
+.brand__suits span {
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+  width: 17px;
+  height: 17px;
+  font-size: 10px;
+  line-height: 17px;
+  color: var(--tertiary);
+  background: var(--surface-c-highest);
+  border-radius: 5px;
+}
+
+.topbar__link {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface-c);
+  border: 1px solid var(--outline-dim);
+  border-radius: var(--r-full);
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.topbar__link:hover {
+  color: var(--text);
+  background: var(--surface-c-high);
+  border-color: var(--outline);
+}
+
+/* ---------- 6. Первый экран ---------- */
+
+.hero {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 40px) clamp(16px, 5vw, 40px) clamp(40px, 7vw, 72px);
   text-align: center;
 }
-.section-header {
-    font-weight: 300;
-    color: #fff;
-    font-size: 32px;
-    margin-bottom: 25px;
-    margin-top: 22px;
-    line-height: 1.1;
-}
-.game-card {
-    border: 1px solid rgba(0,0,0,.35);
-    overflow: hidden;
-    text-align: left;
-    border-radius: 3px;
-    height: 144px;
-    background: rgba(0,0,0,.2);
-    margin-bottom: 22px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
-}
-.game-card__cover, .game-card__header {
-    -webkit-transition: margin .2s ease-in;
-    transition: margin .2s ease-in;
-}
-.game-card__cover{
-    width: 144px;
-    height: 144px;
-    line-height: 0;
-}
-.game-card__header {
-    font-weight: 300;
-    margin: 0;
-    padding-top: 20px;
-    font-size: 20px;
-    /* white-space: nowrap; */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #fff;
-}
-.game-card__genre {
-    display: block;
-    margin-top: 0;
-    padding-top: 5px;
-    font-size: 14px;
-    color: #fff;
-    opacity: .5;
-    font-weight: 400;
-}
-.game-card__footer {
-    display: none;
-    padding-top: 5px;
-    padding-right: 5px;
-    overflow: hidden;
-    color: #fff;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    hyphens: auto;
-    font-size: 13px;
-    max-height: 53px;
-}
-/*
- * Affix
- */
- @media (min-width: 500px) {
-    .game-card__footer {
-      display: block;
-    }
+
+.fan {
+  position: relative;
+  height: 150px;
+  margin-bottom: clamp(24px, 4vw, 40px);
 }
 
-/*
- * Affix
- */
- @media (min-width: 768px) {
-    .footer {
-      position: fixed;
-    }
+.fan__card {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 78px;
+  height: 112px;
+  margin-left: -39px;
+  padding: 8px 9px;
+  text-align: left;
+  color: #1a232c;
+  background: linear-gradient(160deg, #fbf7ee, #e6dcc8);
+  border-radius: var(--r-sm);
+  box-shadow: var(--elev-3);
+  transform-origin: 50% 130%;
 }
-.footer,
-.footer-game {
-    display: block;
-    /* position: fixed; */
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #000;
-    padding: 15px 20px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    font-size: 13px;
-    z-index: 10000;
-    margin-top: 30px;
-    background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.3)),to(rgba(0,0,0,.5)));
-    background: linear-gradient(180deg,rgba(0,0,0,.3) 0,rgba(0,0,0,.5));
-    text-align: center;
+.fan__card b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px;
+  line-height: 1;
 }
-.footer__menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.fan__card i {
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  font-style: normal;
 }
-.game__wrapper {
-    display: block;
-    -webkit-box-shadow: 0 0 2px 1px rgba(0,0,0,.65);
-    box-shadow: 0 0 2px 1px rgba(0,0,0,.65);
-    background: rgba(0,0,0,.2);
-    padding: 25px;
-    margin-top: 25px;
-    margin-bottom: 100px;
+.fan__card::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(26, 35, 44, .18);
+  border-radius: 6px;
 }
-.google-play-badge {
-    height: auto;
-    width: 240px;
+.fan__card.is-red { color: #a83b47; }
+
+.fan__card--1 { transform: rotate(-22deg) translateY(10px); }
+.fan__card--2 { transform: rotate(-11deg) translateY(2px); }
+.fan__card--3 { transform: rotate(0deg); }
+.fan__card--4 { transform: rotate(11deg) translateY(2px); }
+.fan__card--5 { transform: rotate(22deg) translateY(10px); }
+
+.hero__title {
+  margin: 0 0 18px;
+  font-weight: 600;
+  font-size: clamp(30px, 6.4vw, 54px);
+  line-height: 1.1;
+  letter-spacing: -.02em;
 }
 
-#button {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    transition: background-color .3s, 
-      opacity .5s, visibility .5s;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1000;
-  }
-  #button:hover {
-    cursor: pointer;
-  }
-  #button.show {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  @media (min-width: 500px) {
-    #button {
-      margin: 30px;
-    }
-  }
+.hero__text {
+  max-width: 46ch;
+  margin: 0 auto;
+  color: var(--text-dim);
+  font-size: clamp(15px, 2.2vw, 18px);
+}
 
-  .download-link{
-    color: #3097d1;
-    text-decoration: underline;
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: clamp(28px, 4vw, 40px) 0 0;
+}
+.stats div {
+  flex: 1 1 140px;
+  max-width: 200px;
+  padding: 14px 12px;
+  background: var(--surface-c);
+  border: 1px solid var(--outline-dim);
+  border-radius: var(--r-sm);
+}
+.stats dt {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.stats dd {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+/* ---------- 7. Каталог и фильтр-чипы ---------- */
+
+.catalog {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 5vw, 40px) 80px;
+}
+
+.filter__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+/* Чипы фильтра — filter chip из Material 3: контур в состоянии
+   покоя, заливка primary в выбранном состоянии */
+.filter label {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dim);
+  background: transparent;
+  border: 1px solid var(--outline);
+  border-radius: var(--r-full);
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+}
+.filter label:hover {
+  color: var(--text);
+  background: rgba(233, 240, 244, .05);
+}
+
+#f-all:checked    ~ .filter label[for="f-all"],
+#f-card:checked   ~ .filter label[for="f-card"],
+#f-online:checked ~ .filter label[for="f-online"],
+#f-other:checked  ~ .filter label[for="f-other"] {
+  color: var(--on-primary);
+  background: var(--primary);
+  border-color: var(--primary);
+  font-weight: 600;
+}
+#f-all:focus-visible    ~ .filter label[for="f-all"],
+#f-card:focus-visible   ~ .filter label[for="f-card"],
+#f-online:focus-visible ~ .filter label[for="f-online"],
+#f-other:focus-visible  ~ .filter label[for="f-other"] {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.games {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#f-card:checked   ~ .games .game:not([data-kind="card"]),
+#f-online:checked ~ .games .game:not([data-kind="online"]),
+#f-other:checked  ~ .games .game:not([data-kind="other"]) {
+  display: none;
+}
+
+.empty {
+  display: none;
+  margin: 24px 0 0;
+  text-align: center;
+  color: var(--text-dim);
+}
+#f-card:checked   ~ .games:not(:has([data-kind="card"]))   ~ .empty,
+#f-online:checked ~ .games:not(:has([data-kind="online"])) ~ .empty,
+#f-other:checked  ~ .games:not(:has([data-kind="other"]))  ~ .empty {
+  display: block;
+}
+
+/* ---------- 8. Карточка игры ---------- */
+
+.game {
+  position: relative;
+  display: flex;
+  gap: clamp(14px, 2.5vw, 20px);
+  padding: 18px;
+  text-align: left;
+  background: var(--surface-c);
+  border: 1px solid var(--outline-dim);
+  border-radius: var(--r-md);
+  box-shadow: var(--elev-1);
+  transition: box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.game:hover {
+  background: var(--surface-c-high);
+  border-color: var(--outline);
+  box-shadow: var(--elev-2);
+}
+.game:focus-within { border-color: var(--primary); }
+
+.game__index {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 17px;
+  color: var(--primary-dim);
+  opacity: .75;
+}
+.game__index.is-red { color: var(--tertiary); }
+
+.game__cover {
+  flex: 0 0 auto;
+  width: clamp(72px, 18vw, 100px);
+  height: clamp(72px, 18vw, 100px);
+  object-fit: cover;
+  background: var(--surface);
+  border-radius: var(--r-sm);
+}
+
+.game__body {
+  min-width: 0;
+  padding-right: 22px;
+}
+
+.game__title {
+  margin: 2px 0 4px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(18px, 2.6vw, 21px);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+}
+.game__title a {
+  color: var(--text);
+}
+.game__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-md);
+}
+.game:hover .game__title a { color: var(--primary); }
+
+.game__genre {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.game__text {
+  margin: 0 0 14px;
+  max-width: 60ch;
+  font-size: 15px;
+  color: #c3d1db;
+}
+
+/* Кнопка внутри карточки — tonal button из Material 3 */
+.game__play {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--on-secondary);
+  background: var(--secondary);
+  border-radius: var(--r-full);
+  transition: filter .15s ease;
+}
+.game__play:hover {
+  color: var(--on-secondary);
+  filter: brightness(1.12);
+}
+
+/* ---------- 9. Подвал ---------- */
+
+.footer {
+  padding: 26px 20px 34px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-dim);
+  border-top: 1px solid var(--outline-dim);
+}
+.footer__line { margin: 4px 0; }
+
+/* =========================================================
+   Страница одной игры
+   ========================================================= */
+
+/* ---------- 10. Шапка игры ---------- */
+
+.lead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(18px, 4vw, 32px);
+  align-items: flex-start;
+  padding: clamp(20px, 4vw, 34px);
+  background: var(--surface-c);
+  border: 1px solid var(--outline-dim);
+  border-radius: var(--r-lg);
+  box-shadow: var(--elev-1);
+}
+
+.lead__cover {
+  flex: 0 0 auto;
+  width: clamp(88px, 22vw, 150px);
+  height: clamp(88px, 22vw, 150px);
+  object-fit: cover;
+  background: var(--surface);
+  border-radius: var(--r-md);
+}
+
+.lead__body {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.lead__genre {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.lead__title {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 6vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+
+.lead__text {
+  margin: 0;
+  max-width: 58ch;
+  color: #c3d1db;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* Кнопки: outlined (по умолчанию) и filled (--play), как в Material 3 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--outline);
+  border-radius: var(--r-full);
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.btn:hover {
+  color: var(--text);
+  background: rgba(233, 240, 244, .06);
+  border-color: var(--text-dim);
+}
+
+.btn--play {
+  color: var(--on-primary);
+  background: var(--primary);
+  border-color: var(--primary);
+  font-weight: 600;
+  box-shadow: var(--elev-1);
+}
+.btn--play:hover {
+  color: var(--on-primary);   /* ← вернуть тёмный текст */
+  background: #eec48b;
+  border-color: #eec48b;
+}
+
+.actions__note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.actions__note a {
+  border-bottom: 1px solid var(--primary-dim);
+}
+
+/* ---------- 11. Блоки контента ---------- */
+
+.block { margin-top: clamp(38px, 6vw, 60px); }
+
+.block__title {
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(20px, 3.2vw, 26px);
+  letter-spacing: -.01em;
+}
+
+.block__note {
+  margin: -8px 0 18px;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+/* ---------- Возможности ---------- */
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 900px;
+}
+.features li {
+  position: relative;
+  padding: 12px 16px 12px 44px;
+  text-align: left;
+  color: #c3d1db;
+  background: var(--surface-c);
+  border: 1px solid var(--outline-dim);
+  border-radius: var(--r-sm);
+}
+.features li::before {
+  content: "♣";
+  position: absolute;
+  left: 16px;
+  top: 11px;
+  font-size: 15px;
+  color: var(--primary-dim);
+}
+.features li:nth-child(2)::before { content: "♦"; color: var(--tertiary); }
+.features li:nth-child(3)::before { content: "♠"; color: var(--secondary); }
+.features li:nth-child(4)::before { content: "♥"; color: var(--tertiary); }
+
+@media (min-width: 760px) {
+  .features { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- История версий ---------- */
+
+.log {
+  margin: 0;
+  padding: 0 0 0 22px;
+  list-style: none;
+  border-left: 1px solid var(--outline-dim);
+  text-align: left;
+  max-width: 760px;
+}
+
+.log__item { position: relative; padding-bottom: 26px; }
+.log__item:last-child { padding-bottom: 0; }
+
+.log__item::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  background: var(--primary-dim);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--bg);
+}
+.log__item:first-child::before { background: var(--primary); }
+
+.log__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.log__ver {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--primary);
+}
+.log__date { font-size: 13px; color: var(--text-dim); }
+
+.log__list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: #c3d1db;
+  font-size: 15px;
+}
+.log__list li { margin-bottom: 4px; }
+
+/* ---------- Скриншоты ---------- */
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.shots img {
+  display: block;
+  width: 100%;
+  border-radius: var(--r-sm);
+  box-shadow: var(--elev-1);
+  transition: box-shadow .2s ease;
+}
+.shots a:hover img { box-shadow: var(--elev-3); }
+
+@media (min-width: 700px)  { .shots { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .shots { grid-template-columns: repeat(4, 1fr); } }
+
+/* Полноэкранный просмотр снимка через :target — без JS */
+.viewer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+}
+.viewer:target { display: flex; }
+
+.viewer__bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 10, 14, .92);
+}
+.viewer img {
+  position: relative;
+  max-width: 100%;
+  max-height: 86vh;
+  border-radius: var(--r-sm);
+  box-shadow: var(--elev-3);
+}
+.viewer__close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface-c-high);
+  border-radius: var(--r-full);
+}
+
+/* ---------- Возврат к каталогу ---------- */
+
+.next {
+  margin-top: clamp(38px, 6vw, 60px);
+  font-size: 15px;
+}
+
+/* ---------- 12. Адаптив ---------- */
+
+@media (min-width: 620px) {
+  .fan { height: 180px; }
+  .fan__card {
+    width: 96px;
+    height: 138px;
+    margin-left: -48px;
+    padding: 10px 12px;
   }
-  .download-link:focus,
-  .download-link:hover {
-    color: #3097d1;
-  }
+  .fan__card b { font-size: 18px; }
+  .fan__card i { font-size: 17px; }
+}
+
+@media (min-width: 860px) {
+  .games { grid-template-columns: repeat(2, 1fr); }
+  .game { padding: 22px; }
+}
+
+@media (min-width: 1240px) {
+  .games { grid-template-columns: repeat(3, 1fr); }
+  .game { flex-direction: column; }
+  .game__cover { width: 92px; height: 92px; }
+  .game__body { padding-right: 0; }
+}
+
+@media (max-width: 420px) {
+  .fan__card--1 { transform: rotate(-18deg) translateY(12px) scale(.92); }
+  .fan__card--2 { transform: rotate(-9deg)  translateY(4px)  scale(.96); }
+  .fan__card--4 { transform: rotate(9deg)   translateY(4px)  scale(.96); }
+  .fan__card--5 { transform: rotate(18deg)  translateY(12px) scale(.92); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
